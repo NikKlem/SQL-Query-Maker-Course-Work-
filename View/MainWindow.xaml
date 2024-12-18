@@ -1,0 +1,168 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="SQL Query Maker" Height="450" Width="800"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+            <ColumnDefinition Width="6*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Row="1" Grid.Column="1"
+                   x:Name="outputbox"
+                   Background="Beige"
+                   Text="{Binding Output}"
+                   ></TextBox>
+        <StackPanel Grid.Row="1" Grid.Column="0"
+                    x:Name="templatepanel"
+                    Background="PeachPuff">
+            <Expander x:Name="createtable" 
+                      Header="Create table">
+                <StackPanel>
+                    
+                    <Button x:Name="createbutton"
+                            Content="Create table (X)"
+                            Command="{Binding FetchCommand}"
+                            CommandParameter="1">
+                    
+                    </Button>
+                    <Button x:Name="addint"
+                            Content="Add (INT) row"
+                            Command="{Binding FetchCommand}"
+                            CommandParameter="2">
+                    
+                    </Button>
+                    <Button Name="addnvarchar"
+                                Content="Add nvarchar(size) row"
+                            Command="{Binding FetchCommand}"
+                            CommandParameter="3"></Button>
+                    <Button x:Name="addate"
+                            Content="Add (Date) row"
+                            Command="{Binding FetchCommand}"
+                            CommandParameter="4"></Button>
+                    <Button x:Name="addfloat"
+                            Content="Add (Float) row"
+                            Command="{Binding FetchCommand}"
+                            CommandParameter="5"></Button>
+                    <Button x:Name="addbin"
+                            Content="Add (Binary) row"
+                            Command="{Binding FetchCommand}"
+                            CommandParameter="6"></Button>
+
+                </StackPanel>
+                        
+                
+            </Expander>
+            <Expander x:Name="altertable"
+                      Header="Alter table">
+                <StackPanel>
+                    <Expander x:Name="addcol"
+                             Header="Add column"
+                             >
+                        <StackPanel>
+                            <Button x:Name="addintc"
+                                 Content="Add (int) row"
+                                    Command="{Binding FetchCommand}"
+                                     CommandParameter="2">
+                            </Button>
+                            <Button Name="addnvarcharc"
+                                 Content="Add nvarchar(size) row"
+                                    Command="{Binding FetchCommand}"
+                                     CommandParameter="3"></Button>
+                             <Button x:Name="addatec"
+                                Content="Add (Date) row"
+                                     Command="{Binding FetchCommand}"
+                                      CommandParameter="4">
+                                 
+                             </Button>
+                             <Button x:Name="addfloatc"
+                                Content="Add (Float) row"
+                                     Command="{Binding FetchCommand}"
+                                      CommandParameter="5">
+                                 
+                             </Button>
+                            <Button x:Name="addbinc"
+                             Content="Add (Binary) row"
+                                    Command="{Binding FetchCommand}"
+                                    CommandParameter="6">
+
+                            </Button>
+                        </StackPanel>
+                    </Expander>
+                    <Button x:Name="dropcol"
+                            Content="Drop column"
+                            Command="{Binding FetchCommand}"
+                             CommandParameter="7">
+                        
+                    </Button>
+                    
+                </StackPanel>
+            </Expander>
+            <Expander x:Name="sorting"
+                      Header="Sorting">
+                <StackPanel>
+                    <Button x:Name="sortby"
+                            Content="Sort by"
+                            Command="{Binding FetchCommand}"
+                             CommandParameter="8">
+                        
+                    </Button>
+                </StackPanel>
+            </Expander>
+            <Expander x:Name="grouping"
+                      Header="Grouping">
+                <StackPanel>
+                    <Button x:Name="groupby"
+                            Content="Group by"
+                              Command="{Binding FetchCommand}"
+                             CommandParameter="9">
+
+                    </Button>
+                    <Button x:Name="orderby"
+                             Content="Order by"
+                            Command="{Binding FetchCommand}"
+                             CommandParameter="10">
+
+                    </Button>
+                </StackPanel>
+            </Expander>
+            <Button x:Name="dropt"
+                    Content="Drop table"
+                    Command="{Binding FetchCommand}"
+                    CommandParameter="11">
+
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1"
+                    x:Name="outputworkpanel"
+                    Background="Bisque"
+                    Orientation="Horizontal">
+            <Button x:Name="clearbutton"
+                    Content="Clear"
+                    HorizontalAlignment="Right"
+                    Width="70"
+                    Background="Red"
+                    Margin="3"
+                    Command="{Binding ClearCommand}"></Button>
+            <Button x:Name="copybutton" 
+                    Content="Copy"
+                    Background="Silver"
+                    Width="70"
+                    Margin="3"
+                    Command="{Binding CopyCommand}"
+                    CommandParameter="{Binding Output}"></Button>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="0" 
+                    x:Name="namepanel"
+                    Background="DarkGray"
+                    Orientation="Horizontal"></StackPanel>
+    </Grid>
+</Window>

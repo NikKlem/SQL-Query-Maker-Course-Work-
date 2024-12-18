@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="WpfApp2.Model.ApplicationContext">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApp2.Model.Template" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAIAAAAAQAgAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Model\Template.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RelayCommand" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfApp2.ViewModel.ApplicationViewModel" BaseTypeListCollapsed="true">
+    <Position X="1.75" Y="3" Width="2.25" />
+    <AssociationLine Name="clearCommand" Type="RelayCommand" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="4.438" />
+        <Point X="8.5" Y="4.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAAAABAAAECQAAAAIAAIAAABiAAgAAAAIgAAAAIAAAA=</HashCode>
+      <FileName>ViewModel\ApplicationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="db" />
+      <Field Name="clearCommand" />
+      <Field Name="fetchCommand" />
+      <Field Name="copyCommand" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.183" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
